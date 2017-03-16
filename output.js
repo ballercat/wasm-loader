@@ -13,14 +13,13 @@ const make = source => {
   return wa = new Module(buffer);
 };
 
-const WebAssemblyModule = (deps = {
+const WebAssemblyModule = function(deps = {
   'global': {},
   'env': {
     'memory': new Memory({initial: 10, limit: 100}),
     'table': new Table({initial: 0, element: 'anyfunc'})
   }
-}) => {
-  console.log(uint8);
+}) {
   return new Instance(wa || make(), deps);
 }
 
