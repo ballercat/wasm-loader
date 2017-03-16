@@ -1,0 +1,110 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/Cellar/node/6.6.0/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'publish' ]
+2 info using npm@3.10.7
+3 info using node@v6.6.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/abuldauskas/nonwork/wasm-loader',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/abuldauskas/.npm/wasm-loader/0.0.1/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/abuldauskas/.npm correctMkdir not in flight; initializing
+10 info lifecycle wasm-loader@0.0.1~prepublish: wasm-loader@0.0.1
+11 silly lifecycle wasm-loader@0.0.1~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/abuldauskas/.npm/wasm-loader/0.0.1/package.tgz',
+12 verbose tar pack   '/Users/abuldauskas/nonwork/wasm-loader' ]
+13 verbose tarball /Users/abuldauskas/.npm/wasm-loader/0.0.1/package.tgz
+14 verbose folder /Users/abuldauskas/nonwork/wasm-loader
+15 verbose addLocalTarball adding from inside cache /Users/abuldauskas/.npm/wasm-loader/0.0.1/package.tgz
+16 verbose correctMkdir /Users/abuldauskas/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd wasm-loader@0.0.1
+18 verbose afterAdd /Users/abuldauskas/.npm/wasm-loader/0.0.1/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/abuldauskas/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/abuldauskas/.npm/wasm-loader/0.0.1/package/package.json written
+21 silly publish { name: 'wasm-loader',
+21 silly publish   version: '0.0.1',
+21 silly publish   description: 'Webpack loader for WASM',
+21 silly publish   main: 'index.js',
+21 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/ballercat/wasm-loader.git' },
+21 silly publish   keywords: [ 'wasm', 'webassembly', 'webpack', 'loader' ],
+21 silly publish   author: { name: 'Arthur Buldauskas' },
+21 silly publish   license: 'MIT',
+21 silly publish   bugs: { url: 'https://github.com/ballercat/wasm-loader/issues' },
+21 silly publish   homepage: 'https://github.com/ballercat/wasm-loader#readme',
+21 silly publish   dependencies: { 'loader-utils': '^1.1.0' },
+21 silly publish   readme: '# WASM Binary Module loader for Webpack\n\n## Install\n\nInstall package:\n`npm install --save wasm-loader`\n\n# Usage\n\nEdit webpack.config.js:\n```\n  loaders: [\n    {\n      test: /\\.wasm$/,\n      loaders: [\'wasm-loader\']\n    }\n  ]\n```\n\nInclude wasm from your code:\n\n```\nimport Counter from \'wasm/counter\';\n\nconst counter = new Counter();\nconsole.log(counter.exports.count()); // 0\nconsole.log(counter.exports.count()); // 1\nconsole.log(counter.exports.count()); // 2\n```\n\nDefault export from wasm module is a constructor which returns a [WebAssembly.Instance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WebAssembly/Instance). `deps` can be passed in to\noverride defaults.\n\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: '15cef0a41dc3692c896d8c8a1c76d612230758ee',
+21 silly publish   _id: 'wasm-loader@0.0.1',
+21 silly publish   _shasum: '9de39ed52b57ab2b8a9b0c2f0a6cf4a942698774',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name wasm-loader
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'wasm-loader',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'wasm-loader',
+26 silly mapToRegistry   name: 'wasm-loader',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.npmjs.org/wasm-loader
+28 verbose publish registryBase https://registry.npmjs.org/
+29 silly publish uploading /Users/abuldauskas/.npm/wasm-loader/0.0.1/package.tgz
+30 verbose request uri https://registry.npmjs.org/wasm-loader
+31 verbose request sending authorization for write operation
+32 info attempt registry request try #1 at 6:37:25 PM
+33 verbose request using bearer token for auth
+34 verbose request id b4e2e69d68362e23
+35 http request PUT https://registry.npmjs.org/wasm-loader
+36 http 403 https://registry.npmjs.org/wasm-loader
+37 verbose headers { 'content-type': 'application/json',
+37 verbose headers   'cache-control': 'max-age=300',
+37 verbose headers   'content-length': '95',
+37 verbose headers   'accept-ranges': 'bytes',
+37 verbose headers   date: 'Thu, 16 Mar 2017 22:37:26 GMT',
+37 verbose headers   via: '1.1 varnish',
+37 verbose headers   connection: 'keep-alive',
+37 verbose headers   'x-served-by': 'cache-bos8226-BOS',
+37 verbose headers   'x-cache': 'MISS',
+37 verbose headers   'x-cache-hits': '0',
+37 verbose headers   'x-timer': 'S1489703845.742876,VS0,VE1040',
+37 verbose headers   vary: 'Accept-Encoding' }
+38 verbose request invalidating /Users/abuldauskas/.npm/registry.npmjs.org/wasm-loader on PUT
+39 error publish Failed PUT 403
+40 verbose stack Error: "You cannot publish over the previously published version 0.0.1." : wasm-loader
+40 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+40 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+40 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+40 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:187:22)
+40 verbose stack     at emitTwo (events.js:106:13)
+40 verbose stack     at Request.emit (events.js:191:7)
+40 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1044:10)
+40 verbose stack     at emitOne (events.js:96:13)
+40 verbose stack     at Request.emit (events.js:188:7)
+40 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:965:12)
+41 verbose statusCode 403
+42 verbose pkgid wasm-loader
+43 verbose cwd /Users/abuldauskas/nonwork/wasm-loader
+44 error Darwin 15.6.0
+45 error argv "/usr/local/Cellar/node/6.6.0/bin/node" "/usr/local/bin/npm" "publish"
+46 error node v6.6.0
+47 error npm  v3.10.7
+48 error code E403
+49 error "You cannot publish over the previously published version 0.0.1." : wasm-loader
+50 error If you need help, you may report this error at:
+50 error     <https://github.com/npm/npm/issues>
+51 verbose exit [ 1, true ]
