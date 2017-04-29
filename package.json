@@ -4,7 +4,7 @@
   "description": "Webpack loader for WASM",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node --expose-wasm jasmine.js"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "homepage": "https://github.com/ballercat/wasm-loader#readme",
   "dependencies": {
     "loader-utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "jasmine": "^2.6.0"
   }
 }
