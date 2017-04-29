@@ -19,7 +19,11 @@ describe('wasm-loader', () => {
       done();
     }
 
-    loader.call(loaderContext);
+    loader.call(loaderContext, readFileSync(loaderContext.resourcePath));
   });
+
+  // TODO: Once the node version 8 with MVP(01) support is ready we
+  // can actually test the output module. Not really worth the hassle
+  // compiling down to 0c of wasm, but can be done
 });
 
