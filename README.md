@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ballercat/wasm-loader.svg?branch=master)](https://travis-ci.org/ballercat/wasm-loader)
+
 # WASM Binary Module loader for Webpack
 
 A simple `.wasm` binary file loader for Webpack. Import your wasm modules directly into your bundle as Constructors which return `WebAssembly.Instance`. This avoids the need to use fetch and parse for your wasm files. Imported wasm files
