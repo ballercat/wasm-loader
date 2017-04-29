@@ -1,6 +1,7 @@
 const loader = require('./../index');
 const { readFileSync } = require('fs');
-const out = readFileSync(__dirname + '/out.js');
+const stripBOM = require('./../strip-bom');
+const out = stripBOM(readFileSync(__dirname + '/out.js', 'utf-8'));
 
 describe('wasm-loader', () => {
   let loaderContext;
@@ -14,7 +15,7 @@ describe('wasm-loader', () => {
 
   it('should combine .wasm files to javascript', (done) => {
     loaderContext.callback = (unused, output) => {
-			expect(output.indexOf(out) != -1).toBe(true);
+      expect(output).toBe(out);
       done();
     }
 
