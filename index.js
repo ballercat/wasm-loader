@@ -1,8 +1,7 @@
 var fs = require('fs');
 var bootstrap = fs.readFileSync(__dirname + '/output.js', 'utf8');
 
-module.exports = function(source) {
-  var buffer = Buffer.from(source);
+module.exports = function(buffer) {
   var out = "var buffer = new ArrayBuffer(" + buffer.length + ");";
   out += "var uint8 = new Uint8Array(buffer);";
   out += "uint8.set([";
@@ -14,4 +13,6 @@ module.exports = function(source) {
 
   this.callback(null, out);
 };
+
+module.exports.raw = true;
 

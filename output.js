@@ -23,4 +23,4 @@ const WebAssemblyModule = function(deps = {
   return new Instance(wa || make(), deps);
 }
 
-export default WebAssemblyModule;
+module.exports = WebAssemblyModule;
