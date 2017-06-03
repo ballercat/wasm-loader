@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/ballercat/wasm-loader.svg?branch=master)](https://travis-ci.org/ballercat/wasm-loader)
+[![Package Quality](http://npm.packagequality.com/shield/wasm-loader.svg)](http://packagequality.com/#?package=wasm-loader)
 
 # WASM Binary Module loader for Webpack
 
