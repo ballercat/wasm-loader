@@ -57,3 +57,10 @@ const customCounter = new Counter({
   }
 }
 ```
+
+*A note about default deps(importsObject)*
+
+Default `importsObject` is meant to be used for a very basic wasm module. Most likely it will not suffice for something not dead simple compiled with emscripten. This is intentional. Supply your own
+imports to match the requirements of your wasm module(s). Some options are compiling your source code into S-syntax(`.wast`) examining that output, checking the imports. Compile the s-syntax file with
+`asm2wasm` into the final wasm module.
+
