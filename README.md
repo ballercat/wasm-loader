@@ -11,7 +11,7 @@ are converted to Uint8Arrays and become part of the full JS bundle!
 Install package:
 `npm install --save wasm-loader`
 
-# Usage
+# Usage (OUT OF DATE, CHECK SPEC)
 
 Edit webpack.config.js:
 ```
