@@ -2,16 +2,10 @@
 
 const {
   Module,
-  Instance,
+  instantiate,
   Memory,
   Table
 } = WebAssembly;
-
-let wa;
-const make = source => {
-  // buffer should already be set
-  return wa = new Module(buffer);
-};
 
 const WebAssemblyModule = function(deps = {
   'global': {},
@@ -20,7 +14,7 @@ const WebAssemblyModule = function(deps = {
     'table': new Table({initial: 0, element: 'anyfunc'})
   }
 }) {
-  return new Instance(wa || make(), deps);
+  return instantiate(buffer, deps);
 }
 
 module.exports = WebAssemblyModule;
