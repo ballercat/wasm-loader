@@ -4,7 +4,12 @@ var loaderUtils = require('loader-utils');
 var wasmDCE = require('wasm-dce')
 
 module.exports = function(buffer) {
-  var params = loaderUtils.parseQuery(this.resourceQuery);
+
+  var params = {};
+
+  if (this.resourceQuery !== "") {
+    params = loaderUtils.parseQuery(this.resourceQuery);
+  }
 
   if (params.dce === '1') {
     // FIXME(sven): get the used exports
