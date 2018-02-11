@@ -3,8 +3,6 @@ var bootstrap = fs.readFileSync(__dirname + '/output.js', 'utf8');
 var loaderUtils = require('loader-utils');
 var wasmDCE = require('wasm-dce')
 
-var config = {dce: true};
-
 module.exports = function(buffer) {
   var params = loaderUtils.parseQuery(this.resourceQuery);
 
