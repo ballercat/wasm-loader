@@ -7,7 +7,7 @@ module.exports = function(buffer) {
 
   var params = {};
 
-  if (this.resourceQuery !== "") {
+  if (typeof this.resourceQuery === "string" && this.resourceQuery !== "") {
     params = loaderUtils.parseQuery(this.resourceQuery);
   }
 
