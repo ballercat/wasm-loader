@@ -18,6 +18,7 @@ describe('wasm-loader', () => {
 
   beforeEach(() => {
     loaderContext = {
+      resourceQuery: '',
       resourcePath: './counter.wasm',
       options: { context: __dirname + '/../' }
     };
