@@ -24,7 +24,7 @@
   "homepage": "https://github.com/ballercat/wasm-loader#readme",
   "dependencies": {
     "loader-utils": "^1.1.0",
-    "wasm-dce": "0.0.4"
+    "wasm-dce": "0.0.5"
   },
   "devDependencies": {
     "jasmine": "^2.6.0"
