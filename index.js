@@ -9,11 +9,12 @@ module.exports = function(buffer) {
 
   if (this.resourceQuery !== "") {
     params = loaderUtils.parseQuery(this.resourceQuery);
-  }
 
-  if (params.dce === '1') {
-    // FIXME(sven): get the used exports
-    var usedExports = [];
+    var usedExports = Object
+      .keys(params)
+      .filter((flagName) => (
+        params[flagName] === true
+      ));
 
     buffer = wasmDCE(buffer, usedExports);
   }
