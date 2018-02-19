@@ -57,7 +57,7 @@ describe('wasm-loader', () => {
   describe('optimizations', () => {
 
     it('should remove the exports if unused', (done) => {
-      loaderContext.resourceQuery = "?foo,bar";
+      loaderContext.resourceQuery = "?dce=1&foo&bar";
 
       loaderContext.callback = (unused, output) => {
         const module = new Module(__NOTAREALMODULE__, null);

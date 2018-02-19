@@ -10,13 +10,16 @@ module.exports = function(buffer) {
   if (this.resourceQuery !== "") {
     params = loaderUtils.parseQuery(this.resourceQuery);
 
-    var usedExports = Object
-      .keys(params)
-      .filter((flagName) => (
-        params[flagName] === true
-      ));
+    if (params.dce === '1') {
 
-    buffer = wasmDCE(buffer, usedExports);
+      var usedExports = Object
+        .keys(params)
+        .filter((flagName) => (
+          params[flagName] === true
+        ));
+
+      buffer = wasmDCE(buffer, usedExports);
+    }
   }
 
   var out = "var buffer = new ArrayBuffer(" + buffer.length + ");";
