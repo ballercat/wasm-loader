@@ -65,10 +65,11 @@ describe('wasm-loader', () => {
         const makeModule = module.exports();
 
         makeModule.then(res => {
-          expect(res.instance.exports._Z4facti).not.toBe('function');
-        });
+          const factorial = res.instance.exports._Z4facti;
+          expect(factorial).not.toBe('function');
 
-        done();
+          done();
+        });
       }
 
       loader.call(loaderContext, wasm);
