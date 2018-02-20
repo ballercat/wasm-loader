@@ -23,6 +23,26 @@ Edit webpack.config.js:
   ]
 ```
 
+## Optimizations
+
+### Dead code elemination
+
+This is an experimental feature and thus not activated by default.
+
+You can activate it by passing `dce=1` to the import and by specifying manually (for now) the exported elements you use, like the following example:
+
+```js
+import createInstance from "./add.wasm?dce=1&add&test"
+
+createInstance()
+.then(m => {
+  console.log(m.instance.exports.add(1, 2));
+  console.log(m.instance.exports.test());
+});
+```
+
+Everything else in the `add.wasm` binary will be removed.
+
 ## Include wasm from your code
 
 Grab your pre-built wasm file. For demo purposes we will use the excellent [WasmExplorer](https://mbebenita.github.io/WasmExplorer/).

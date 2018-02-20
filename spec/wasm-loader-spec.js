@@ -18,6 +18,7 @@ describe('wasm-loader', () => {
 
   beforeEach(() => {
     loaderContext = {
+      resourceQuery: '',
       resourcePath: './counter.wasm',
       options: { context: __dirname + '/../' }
     };
@@ -52,5 +53,29 @@ describe('wasm-loader', () => {
 
     loader.call(loaderContext, wasm);
   });
+
+  describe('optimizations', () => {
+
+    it('should remove the exports if unused', (done) => {
+      loaderContext.resourceQuery = "?dce=1&foo&bar";
+
+      loaderContext.callback = (unused, output) => {
+        const module = new Module(__NOTAREALMODULE__, null);
+        module._compile(output, __NOTAREALMODULE__);
+        const makeModule = module.exports();
+
+        makeModule.then(res => {
+          const factorial = res.instance.exports._Z4facti;
+          expect(factorial).not.toBe('function');
+
+          done();
+        });
+      }
+
+      loader.call(loaderContext, wasm);
+    });
+
+  });
+
 });
 
