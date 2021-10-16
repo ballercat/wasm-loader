@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/ballercat/wasm-loader.svg?branch=master)](https://travis-ci.org/ballercat/wasm-loader)
 [![Package Quality](http://npm.packagequality.com/shield/wasm-loader.svg)](http://packagequality.com/#?package=wasm-loader)
 
+# ⚠️ ⚠️ This loader is DEPRECATED. Use NATIVE Webpack 5 Support for WebAssembly as described [here](https://webpack.js.org/configuration/experiments/) or follow a tiny demo example [here](https://github.com/ballercat/minimal-webpack5-wasm-demo). ⚠️ ⚠️
+
 # WASM Binary Module loader for Webpack
 
 A simple `.wasm` binary file loader for Webpack. Import your wasm modules directly into your bundle as Constructors which return `WebAssembly.Instance`. This avoids the need to use fetch and parse for your wasm files. Imported wasm files
